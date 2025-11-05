@@ -5,6 +5,108 @@
   overflow: hidden;
 }
 
+/* 折扣活动横幅 */
+.discount-banner {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+  }
+  50% {
+    box-shadow: 0 15px 50px rgba(255, 107, 107, 0.5);
+  }
+}
+
+.discount-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: white;
+}
+
+.discount-icon {
+  font-size: 3rem;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.discount-text {
+  flex: 1;
+}
+
+.discount-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.discount-subtitle {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+.discount-countdown {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  min-width: 200px;
+}
+
+.countdown-label {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.countdown-time {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+  z-index: 10;
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -113,6 +215,275 @@
   color: white;
 }
 
+.pricing-button {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.pricing-button:hover {
+  box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+/* 报价详情区域 */
+.pricing-detail {
+  margin-top: 3rem;
+  overflow: hidden;
+}
+
+.pricing-content {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-xl);
+}
+
+.pricing-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+
+.pricing-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pricing-tier {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.pricing-tier:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-tier.featured {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+.pricing-tier.featured:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+
+.tier-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-tier.featured .tier-header {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.tier-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tier-price {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.original-price {
+  font-size: 1.25rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 600;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+.discount-price {
+  font-size: 2rem;
+  color: #ff6b6b;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
+  animation: priceGlow 2s ease-in-out infinite;
+}
+
+@keyframes priceGlow {
+  0%, 100% {
+    text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
+  }
+  50% {
+    text-shadow: 2px 2px 8px rgba(255, 107, 107, 0.4);
+  }
+}
+
+.pricing-tier.featured .tier-price {
+  color: white;
+}
+
+.pricing-tier.featured .original-price {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-tier.featured .discount-price {
+  color: #ffeb3b;
+  text-shadow: 2px 2px 4px rgba(255, 235, 59, 0.3);
+}
+
+.highlight-note {
+  background: linear-gradient(135deg, #ff6b6b22, #ee5a6f22);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #ff6b6b;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+}
+
+.tier-duration {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.pricing-tier.featured .tier-duration {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tier-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tier-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.feature-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-tier.featured .feature-check {
+  background: white;
+  color: var(--primary-color);
+}
+
+.pricing-notes {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+}
+
+.pricing-notes h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.pricing-notes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pricing-notes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pricing-notes li::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.pricing-cta {
+  text-align: center;
+}
+
+.consult-button {
+  background: linear-gradient(135deg, var(--secondary-color), #f472b6);
+  color: white;
+  padding: 1.25rem 3rem;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+  transition: all 0.3s ease;
+}
+
+.consult-button:hover {
+  box-shadow: 0 15px 40px rgba(236, 72, 153, 0.4);
+  transform: translateY(-2px);
+}
+
 .services-cta {
   text-align: center;
   padding: 3rem;
@@ -173,6 +544,84 @@
   }
 
   .services-cta h3 {
+    font-size: 1.5rem;
+  }
+
+  .pricing-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .pricing-title {
+    font-size: 1.5rem;
+  }
+
+  .pricing-tiers {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pricing-tier.featured {
+    transform: scale(1);
+  }
+
+  .pricing-tier.featured:hover {
+    transform: translateY(-10px);
+  }
+
+  .tier-name {
+    font-size: 1.25rem;
+  }
+
+  .tier-price {
+    font-size: 1.5rem;
+  }
+
+  .pricing-notes {
+    padding: 1.5rem;
+  }
+
+  .pricing-notes h4 {
+    font-size: 1.1rem;
+  }
+
+  .consult-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .discount-banner {
+    padding: 1.5rem;
+  }
+
+  .discount-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .discount-title {
+    font-size: 1.5rem;
+  }
+
+  .discount-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .discount-countdown {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .countdown-time {
+    font-size: 1.25rem;
+  }
+
+  .original-price {
+    font-size: 1rem;
+  }
+
+  .discount-price {
     font-size: 1.5rem;
   }
 }
