@@ -1,0 +1,132 @@
+.advantages {
+  padding: 6rem 0;
+  background: var(--bg-secondary);
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.advantage-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.advantage-card:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+.advantage-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.advantage-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.advantage-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.advantage-stats {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.process-section {
+  background: white;
+  padding: 3rem;
+  border-radius: 30px;
+  box-shadow: var(--shadow-lg);
+}
+
+.process-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.step-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .advantages {
+    padding: 4rem 0;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .advantage-card {
+    padding: 2rem;
+  }
+
+  .process-section {
+    padding: 2rem;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .process-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
